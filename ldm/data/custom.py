@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import PIL
 from PIL import Image
@@ -18,6 +19,11 @@ class Custom(Dataset):
         with open(self.data_paths, "r") as f:
             self.image_paths = f.read().splitlines()
         self._length = len(self.image_paths)
+        self.labels = {
+            "relative_file_path_": [l for l in self.image_paths],
+            "file_path_": [os.path.join(self.data_root, l)
+                           for l in self.image_paths],
+        }
 
         self.size = size
         self.interpolation = {"linear": PIL.Image.LINEAR,
