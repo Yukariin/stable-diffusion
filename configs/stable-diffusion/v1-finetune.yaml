@@ -67,11 +67,11 @@ data:
     num_workers: 2
     wrap: false
     train:
-      target: ldm.data.custom.Custom
+      target: ldm.data.custom.DECTrain
       params:
         size: 512
     validation:
-      target: ldm.data.custom.Custom
+      target: ldm.data.custom.DECValidation
       params:
         size: 512
 

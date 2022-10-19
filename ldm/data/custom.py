@@ -51,3 +51,13 @@ class Custom(Dataset):
         image = np.array(image).astype(np.uint8)
         example["image"] = (image / 127.5 - 1.0).astype(np.float32)
         return example
+
+
+class DECTrain(Custom):
+    def __init__(self, **kwargs):
+        super().__init__(txt_file="data/dec/train.txt", data_root="data/dec/images", **kwargs)
+
+
+class DECValidation(Custom):
+    def __init__(self, **kwargs):
+        super().__init__(txt_file="data/dec/val.txt", data_root="data/dec/images", **kwargs)
