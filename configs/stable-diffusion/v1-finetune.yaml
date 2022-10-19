@@ -67,14 +67,14 @@ data:
     num_workers: 2
     wrap: false
     train:
-      target: ldm.data.ImageNetTrain
+      target: ldm.data.imagenet.ImageNetTrain
       params:
         size: 512
         set: train
         per_image_tokens: false
         repeats: 100
     validation:
-      target: ldm.data.ImageNetValidation
+      target: ldm.data.imagenet.ImageNetValidation
       params:
         size: 512
         set: val
