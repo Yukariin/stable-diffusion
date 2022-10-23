@@ -138,6 +138,12 @@ def get_parser(**parser_kwargs):
         default=True,
         help="scale base-lr by ngpu * batch_size * n_accumulate",
     )
+    parser.add_argument(
+        "--actual_resume",
+        type=str,
+        required=True,
+        help="Path to model to actually resume from"
+    )
     return parser
 
 
